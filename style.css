@@ -1,0 +1,145 @@
+@charset "UTF-8";
+/* CSS Document */
+body {
+  margin: 0;
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif"sans-serif;
+  background-color: #f0c7c8;
+  color: #222;
+}
+
+header {
+  background-color: #d897b7; /* change this to their main brand color */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  height: 80px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.hero {
+	position: relative;
+  background: url('../images/Professional look .jpg') center/cover 
+	  no-repeat;
+  color: black;
+  text-align: center;
+  padding: 60px 20px;
+	min-height: 50vh;
+}
+
+.hero .text{
+	font-size: 18px;
+	line-height: 1.6;
+}
+
+.hero::before{
+	content:"";
+	position: absolute;
+	inset: 0;
+	background: rgba(255, 255, 255, 0.6);
+	z-index: 0;
+}
+
+.hero h1,
+.hero p,
+.hero .btn{
+	position: relative;
+	z-index: 1;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ffb703; /* accent color */
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.hero .btn{
+	background-color: #EE9DFB; /*main hero button
+	color*/
+	color: #FFFFFF;
+	transiton: background-color 0.3s ease, transform
+		0.2s ease;
+}
+
+.hero .btn:hover{
+	background-color: #F0C7C8;/*lighter hover
+	shade*/
+	transform: scale(1.05);
+}
+
+.hero img.hero-image{
+	position: relative;
+	z-index: 2;
+	display: block;
+	margin: 40px auto 0;
+	width: 40%;
+	border-radius: 15px;
+}
+
+section {
+  padding: 60px 20px;
+  text-align: center;
+	color: #301732;
+}
+
+/*About layout*/
+.about .content{
+	display: flex;
+	align-items: flex-start; /*was left*/
+	justify-content: center;
+	gap: 40px;
+	flex-wrap: wrap;      /*keeps it stacking nicely
+	on small screens*/
+}
+
+.about{
+	text-align: left;
+}
+
+.about img{
+	width: 300px;
+	border-radius: 10px;
+}
+
+.about .text{
+	max-width: 500px;
+	text-align: left;
+}
+
+.about .text{
+	flex: 1 1 320px;
+}
+
+.about .text p{
+	font-size: 18px;
+	line-height: 1.6;
+}
+
+.coming-soon{
+	text-align: center;
+	background-color: black;
+	color: white;
+	padding: 40px 20px;
+}
+
+footer {
+  background-color: #222;
+  color: #aaa;
+  text-align: center;
+  padding: 10px 0;
+}
+
