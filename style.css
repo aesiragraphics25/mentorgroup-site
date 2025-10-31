@@ -147,3 +147,24 @@ footer {
   padding: 10px 0;
 }
 
+footer{
+	text-align: center;
+	padding: 1rem 0;
+	background-color: #f5f5f5;
+}
+
+footer p{
+	margin-bottom: 0.5rem;
+	font-size: 0.9rem;
+}
+
+.social-icon{
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
+	transition: transform 0.2s ease
+}
+
+.social-icon:hover {
+	transform: scale(1.1);
+}
