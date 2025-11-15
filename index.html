@@ -66,6 +66,11 @@ content="width=device-eidth, initial-scale=1.0">
 		</div>
 	</section>
 
+<div id="lightbox" class="lightbox">
+	<span class="close-lightbox">&times;</span>
+	<img id="lightbox-img" src="" alt="">
+</div>
+
 	<section class="coming-soon">
 		<h2> Our Full Website is Coming Soon!</h2>
 		<p>Support us by donating or joining our team. Thank you in advance!</p>
@@ -84,5 +89,33 @@ content="width=device-eidth, initial-scale=1.0">
 			<img src="images/facebook-app-symbol.png" alt="Facebook social" class="social-icon">
 		</a>
 	</footer>
+<script>
+	// Get elements
+	const lightbox =
+document.getElementByld("lightbox");
+	const lightboxlmg =
+document.getElementByld("lightbox-img");
+	const closeBtn =
+document.querySelector(".close-lightbox");
+
+// When any gallery image is clicked
+	document.querySelectorAll(".gallery-item img").forEach(img => {
+		img.addEventListener("click",()=> {
+			lightbox.style.display = "flex";
+			lightboxlmg.src = img.src;
+	})
+})
+
+// Close when clicking X or background
+	closeBtn.addEventListener("click",()=> {
+		lightboxlmg.src = img.src;
+})
+
+	lightbox.addEventListener("click",()=> {
+		if (e.target === lightbox){
+			lightbox.style.display = "none";
+	}
+})
+</script>
 </body>
 </html>
