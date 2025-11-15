@@ -92,31 +92,44 @@ content="width=device-eidth, initial-scale=1.0">
 	</footer>
 
 <script>
-	// Get elements
-	const lightbox =
-document.getElementByld("lightbox");
-	const lightboxlmg =
-document.getElementByld("lightbox-img");
-	const closeBtn =
-document.querySelector(".close-lightbox");
 
-// When any gallery image is clicked
-	document.querySelectorAll(".gallery-item img").forEach(img => {
-		img.addEventListener("click",()=> {
-			lightbox.style.display = "flex";
-			lightboxlmg.src = img.src;
-	})
-})
+document.addEventListener("DOMContentLoaded",
+function (){
+	const lightbox = 
+document.getElementById("lightbox");
+	const lightboxImg = 
+document.getElementById("lightbox-img");
+	const closeBtn = 
+document.querySelector(".close-lightbox");	
+	
+// Make sure these elements exist
+if (!lightbox || !lightboxImg || !closeBtn) {
+	console.error("Lightbox elements not found");
+	return;
+}
 
-// Close when clicking X or background
-	closeBtn.addEventListener("click",()=> {
-		lightboxlmg.src = img.src;
-})
+// Attach click to every gallery image
+document.querySelectorAll(".gallery-item img").forEach(img => {
+	img.addEventListener("click",()=> {
+		lightbox.style.display = "flex";
+		lightboxImg.src = img.src;
+		lightboxImg.alt = img.alt || "";
+	});
+});
+	
+// CLose on X click
+closeBtn.addEventListener("click",()=> {
+	lightbox.style.display = "none";
+	lightboxImg.src = "";
+});
 
-	lightbox.addEventListener("click",()=> {
+// Close when clicking outside the image
+lightbox.addEventListener("click",(e)=> {
 		if (e.target === lightbox){
 			lightbox.style.display = "none";
-	}
+			lightboxImg.src = "";
+		}
+	});
 })
 </script>
 </body>
